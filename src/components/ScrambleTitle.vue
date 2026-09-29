@@ -53,6 +53,7 @@ onUnmounted(stop)
     class="inline-block transition-transform duration-200"
     :class="shift ? 'hover:translate-x-1' : ''"
     @mouseenter="scramble"
+    @pointerdown="scramble"
     @focus="scramble"
   >
     {{ output }}

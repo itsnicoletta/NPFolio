@@ -161,7 +161,7 @@
 
   @media (max-width: 640px) {
     .home-frame {
-      padding: 4.5rem 1.25rem 1rem;
+      padding: 4.1rem 1.25rem 1rem;
     }
 
     .home-ascii {
@@ -179,9 +179,22 @@
       font-size: clamp(1.9rem, calc(7vw + 0.65vh), 2.65rem);
     }
 
+    .home-hero {
+      margin-top: clamp(1.25rem, 4vh, 2.4rem);
+    }
+
     .home-intro {
+      margin-top: clamp(0.85rem, 2vh, 1.1rem);
       font-size: clamp(0.86rem, calc(2.25vw + 0.3vh), 1rem);
       line-height: 1.45;
+    }
+
+    .home-chips {
+      margin-top: clamp(0.9rem, 2.2vh, 1.2rem);
+    }
+
+    .home-panel {
+      margin-top: clamp(1.4rem, 3.4vh, 2rem);
     }
 
     .home-tabs {
