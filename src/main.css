@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .home-ascii {
+    right: clamp(10rem, 16vw, 30rem);
+  }
+
+  @media (max-width: 1180px), (max-height: 760px) {
+    .home-ascii {
+      right: clamp(3rem, 7vw, 8rem);
+    }
+
+    .home-frame {
+      padding: clamp(3.5rem, calc(4.2vh + 0.9rem), 4.6rem) clamp(1.6rem, calc(2.5vw + 0.35rem), 3.5rem) 1rem;
+    }
+
+    .home-content,
+    .home-panel {
+      max-width: clamp(34rem, calc(45vw + 12vh), 48rem);
+    }
+
+    .home-title {
+      font-size: clamp(3rem, calc(1.8vw + 3.2vh), 4.15rem);
+    }
+
+    .home-intro {
+      margin-top: clamp(0.85rem, 2vh, 1.6rem);
+      font-size: clamp(0.95rem, calc(0.44vw + 0.9vh), 1.15rem);
+    }
+
+    .home-chips {
+      margin-top: clamp(0.85rem, 2vh, 1.55rem);
+      gap: clamp(0.28rem, 0.65vw, 0.62rem);
+    }
+
+    .home-chip {
+      padding: clamp(0.12rem, 0.34vh, 0.22rem) clamp(0.46rem, 0.72vw, 0.68rem);
+      font-size: clamp(0.56rem, calc(0.28vw + 0.32vh), 0.68rem);
+    }
+
+    .home-panel {
+      margin-top: clamp(0.9rem, 2.6vh, 2rem);
+    }
+
+    .home-project-title {
+      font-size: clamp(1.16rem, calc(0.58vw + 1vh), 1.38rem);
+    }
+
+    .home-list-height {
+      height: clamp(9.5rem, calc(100vh - 28rem), 24rem);
+      min-height: 0;
+    }
+
+    .home-ascii pre {
+      font-size: clamp(4.7px, calc(0.38vw + 0.3vh), 9px) !important;
+      line-height: clamp(4.1px, calc(0.32vw + 0.25vh), 8px) !important;
+    }
+  }
+
+  @media (max-width: 980px), (max-height: 660px) {
+    .home-frame {
+      padding: clamp(3.25rem, calc(3.8vh + 0.65rem), 4.1rem) clamp(1.2rem, 3.2vw, 2.5rem) 0.85rem;
+    }
+
+    .home-content,
+    .home-panel {
+      max-width: clamp(30rem, 58vw, 42rem);
+    }
+
+    .home-title {
+      font-size: clamp(2.45rem, calc(1.95vw + 2.9vh), 3.55rem);
+    }
+
+    .home-tabs {
+      font-size: clamp(0.62rem, calc(0.36vw + 0.48vh), 0.8rem);
+    }
+
+    .home-ascii {
+      right: 1rem;
+      opacity: 0.7;
+      transform: translateX(14%);
+    }
+
+    .home-ascii pre {
+      font-size: clamp(3.9px, calc(0.34vw + 0.27vh), 7px) !important;
+      line-height: clamp(3.4px, calc(0.29vw + 0.23vh), 6.2px) !important;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .home-content,
+    .home-panel {
+      max-width: min(100%, 38rem);
+    }
+
+    .home-ascii {
+      bottom: 0.75rem;
+      left: 50%;
+      right: auto;
+      top: auto;
+      height: 34vh;
+      align-items: flex-end;
+      justify-content: center;
+      color: #9ca3af;
+      opacity: 0.35;
+      transform: translateX(-50%);
+    }
+
+    .home-title {
+      font-size: clamp(2.05rem, calc(5.2vw + 1vh), 3.05rem);
+    }
+
+    .home-list-height {
+      height: clamp(10rem, calc(100vh - 26rem), 20rem);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .home-frame {
+      padding: 4.5rem 1.25rem 1rem;
+    }
+
+    .home-ascii {
+      display: flex;
+      height: 30vh;
+      opacity: 0.28;
+    }
+
+    .home-ascii pre {
+      font-size: clamp(3.2px, calc(0.9vw + 0.16vh), 5px) !important;
+      line-height: clamp(2.8px, calc(0.75vw + 0.14vh), 4.4px) !important;
+    }
+
+    .home-title {
+      font-size: clamp(1.9rem, calc(7vw + 0.65vh), 2.65rem);
+    }
+
+    .home-intro {
+      font-size: clamp(0.86rem, calc(2.25vw + 0.3vh), 1rem);
+      line-height: 1.45;
+    }
+
+    .home-tabs {
+      font-size: clamp(0.58rem, calc(2vw + 0.2vh), 0.78rem);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .home-project-title {
+      font-size: clamp(1rem, calc(3.7vw + 0.2vh), 1.28rem);
+    }
+
+    .home-project-subtitle {
+      font-size: 0.66rem;
+    }
+
+    .home-list-height {
+      height: clamp(9rem, calc(100vh - 29rem), 19rem);
+    }
+  }
+
+  .left-scrollbar {
+    direction: rtl;
+    scrollbar-color: #000 transparent;
+    scrollbar-width: thin;
+  }
+
+  .left-scrollbar > * {
+    direction: ltr;
+  }
+
+  .left-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .left-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .left-scrollbar::-webkit-scrollbar-thumb {
+    background: #000;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
