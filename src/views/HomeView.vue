@@ -14,6 +14,7 @@ const activeTab = ref('PROJECTS')
 const projectScroll = ref(0)
 const sideQuestScroll = ref(0)
 const skills = ['UX/UI', 'WEB', 'BRANDING', 'WEBFLOW', 'FRONT-END', 'ART DIRECTION', 'DIGITAL MARKETING']
+const asciiImages = [1, 2, 3, 4, 5, 6].map((number) => `${import.meta.env.BASE_URL}seq%20${number}.png`)
 const whatIDo = [
   'UX/UI Design',
   'Web Design',
@@ -52,7 +53,7 @@ function updateScroll(event, target) {
   <div class="home-frame fixed inset-0 overflow-hidden bg-white px-10 pb-5 pt-20 text-black sm:px-16 lg:px-24">
     <aside class="home-ascii pointer-events-none absolute bottom-0 top-0 z-0 hidden items-center justify-end overflow-visible md:flex">
       <AsciiGif
-        :images="['/seq%201.png', '/seq%202.png', '/seq%203.png', '/seq%204.png', '/seq%205.png', '/seq%206.png']"
+        :images="asciiImages"
         :width="190"
         :speed="120"
         :threshold="205"
