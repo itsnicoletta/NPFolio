@@ -9,18 +9,18 @@ const project = computed(() => projects.find((item) => item.slug === route.param
 </script>
 
 <template>
-  <section v-if="project" class="mx-auto mt-16 max-w-6xl pb-20">
+  <section v-if="project" class="mx-auto mt-8 max-w-6xl pb-12 md:mt-16 md:pb-20">
     <RouterLink class="text-sm font-semibold underline" to="/">back to projects</RouterLink>
 
-    <div class="mt-10 max-w-3xl">
+    <div class="mt-6 max-w-3xl md:mt-10">
       <p class="text-sm font-semibold">{{ project.type }}</p>
-      <h1 class="mt-3 text-5xl font-semibold leading-none tracking-tight sm:text-7xl">
+      <h1 class="mt-3 text-4xl font-semibold leading-none tracking-tight sm:text-5xl md:text-7xl">
         {{ project.title }}
       </h1>
-      <p class="mt-6 text-xl leading-8">{{ project.summary }}</p>
+      <p class="mt-4 text-lg leading-7 md:mt-6 md:text-xl md:leading-8">{{ project.summary }}</p>
     </div>
 
-    <dl class="mt-10 flex flex-wrap justify-between gap-6 border-y-2 border-black py-5 text-sm">
+    <dl class="mt-7 flex flex-wrap justify-between gap-4 border-y-2 border-black py-4 text-sm md:mt-10 md:gap-6 md:py-5">
       <div>
         <dt class="font-bold uppercase">Role</dt>
         <dd class="mt-1">{{ project.role }}</dd>
@@ -60,7 +60,7 @@ const project = computed(() => projects.find((item) => item.slug === route.param
       </div>
     </dl>
 
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
+    <div class="mt-8 grid gap-6 md:mt-12 md:grid-cols-3 md:gap-8">
       <div>
         <h2 class="text-sm font-bold uppercase">The project</h2>
         <p class="mt-3 leading-7">{{ project.summary }}</p>
@@ -77,7 +77,7 @@ const project = computed(() => projects.find((item) => item.slug === route.param
       </div>
     </div>
 
-    <div class="mt-12 border-t-2 border-black pt-8">
+    <div class="mt-8 border-t-2 border-black pt-6 md:mt-12 md:pt-8">
       <h2 class="text-sm font-bold uppercase">Approach</h2>
       <div class="mt-5 grid gap-6 md:grid-cols-3">
         <div v-for="(item, index) in project.approach" :key="item.title">
@@ -88,14 +88,14 @@ const project = computed(() => projects.find((item) => item.slug === route.param
       </div>
     </div>
 
-    <div class="mt-12 grid gap-6 border-t-2 border-black pt-8 md:grid-cols-2">
+    <div class="mt-8 grid gap-6 border-t-2 border-black pt-6 md:mt-12 md:grid-cols-2 md:pt-8">
       <div v-for="item in project.decisions" :key="item.title">
         <h2 class="text-sm font-bold uppercase">{{ item.title }}</h2>
         <p class="mt-3 leading-7">{{ item.text }}</p>
       </div>
     </div>
 
-    <div v-if="project.metrics?.length" class="mt-12 border-t-2 border-black pt-8">
+    <div v-if="project.metrics?.length" class="mt-8 border-t-2 border-black pt-6 md:mt-12 md:pt-8">
       <h2 class="text-sm font-bold uppercase">Numbers</h2>
       <div class="mt-5 grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-4">
         <div v-for="metric in project.metrics" :key="metric.label">
@@ -105,7 +105,7 @@ const project = computed(() => projects.find((item) => item.slug === route.param
       </div>
     </div>
 
-    <div v-if="project.images.length" class="mt-12 grid gap-4 sm:grid-cols-2">
+    <div v-if="project.images.length" class="mt-8 grid gap-4 sm:grid-cols-2 md:mt-12">
       <button
         v-for="image in project.images"
         :key="image"
@@ -117,7 +117,7 @@ const project = computed(() => projects.find((item) => item.slug === route.param
       </button>
     </div>
 
-    <div class="mt-12 grid gap-8 border-t-2 border-black py-8 md:grid-cols-2">
+    <div class="mt-8 grid gap-6 border-t-2 border-black py-6 md:mt-12 md:grid-cols-2 md:gap-8 md:py-8">
       <div>
         <h2 class="text-sm font-bold uppercase">Outcome</h2>
         <p class="mt-3 leading-7">{{ project.outcome }}</p>
@@ -138,7 +138,7 @@ const project = computed(() => projects.find((item) => item.slug === route.param
     </button>
   </section>
 
-  <section v-else class="mt-16">
+  <section v-else class="mt-8 md:mt-16">
     <h1 class="text-4xl font-semibold">Project not found.</h1>
     <RouterLink class="mt-6 inline-block underline" to="/">back home</RouterLink>
   </section>

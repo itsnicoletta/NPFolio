@@ -4,16 +4,16 @@ import ScrambleTitle from './components/ScrambleTitle.vue'
 
 <template>
   <main
-    class="min-h-screen select-none bg-white px-10 pb-5 pt-20 text-black sm:px-16 lg:px-24"
+    class="site-x min-h-screen select-none bg-white pb-5 pt-20 text-black"
     @copy.prevent
     @cut.prevent
     @contextmenu.prevent
   >
-    <header class="fixed left-0 right-0 top-0 z-10 flex items-center justify-between bg-white px-10 py-5 sm:px-16 lg:px-24">
+    <header class="site-x fixed left-0 right-0 top-0 z-10 flex items-center justify-between bg-white py-5">
       <RouterLink class="text-2xl font-semibold tracking-tight" to="/">NPFolio</RouterLink>
       <div class="flex items-center gap-4">
         <a
-          class="cursor-pointer text-sm font-semibold"
+          class="hidden cursor-pointer text-sm font-semibold sm:inline-block"
           href="https://www.linkedin.com/in/nicoletta-pelosi-811a4a285"
           target="_blank"
           rel="noopener noreferrer"

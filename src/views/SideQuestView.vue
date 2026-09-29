@@ -9,19 +9,19 @@ const sideQuest = computed(() => sideQuests.find((item) => item.slug === route.p
 </script>
 
 <template>
-  <section v-if="sideQuest" class="mx-auto mt-16 max-w-5xl pb-20">
+  <section v-if="sideQuest" class="mx-auto mt-8 max-w-5xl pb-12 md:mt-16 md:pb-20">
     <RouterLink class="text-sm font-semibold underline" to="/">back to side quests</RouterLink>
 
-    <div class="mt-10 max-w-3xl">
+    <div class="mt-6 max-w-3xl md:mt-10">
       <p class="text-sm font-semibold">{{ sideQuest.year }} / {{ sideQuest.type }}</p>
-      <h1 class="mt-3 text-5xl font-semibold leading-none tracking-tight sm:text-7xl">
+      <h1 class="mt-3 text-4xl font-semibold leading-none tracking-tight sm:text-5xl md:text-7xl">
         {{ sideQuest.title }}
       </h1>
-      <p class="mt-6 text-xl leading-8">{{ sideQuest.summary }}</p>
-      <p class="mt-6 leading-7">{{ sideQuest.description }}</p>
+      <p class="mt-4 text-lg leading-7 md:mt-6 md:text-xl md:leading-8">{{ sideQuest.summary }}</p>
+      <p class="mt-4 leading-7 md:mt-6">{{ sideQuest.description }}</p>
     </div>
 
-    <div class="mt-12 grid gap-8 border-t-2 border-black pt-8 md:grid-cols-2">
+    <div class="mt-8 grid gap-6 border-t-2 border-black pt-6 md:mt-12 md:grid-cols-2 md:gap-8 md:pt-8">
       <div v-if="sideQuest.items?.length">
         <h2 class="text-sm font-bold uppercase">What I do</h2>
         <ul class="mt-3 space-y-1 leading-7">
@@ -34,7 +34,7 @@ const sideQuest = computed(() => sideQuests.find((item) => item.slug === route.p
       </div>
     </div>
 
-    <div v-if="sideQuest.images.length" class="mt-12 grid gap-4 sm:grid-cols-2">
+    <div v-if="sideQuest.images.length" class="mt-8 grid gap-4 sm:grid-cols-2 md:mt-12">
       <button
         v-for="image in sideQuest.images"
         :key="image"
@@ -56,7 +56,7 @@ const sideQuest = computed(() => sideQuests.find((item) => item.slug === route.p
     </button>
   </section>
 
-  <section v-else class="mt-16">
+  <section v-else class="mt-8 md:mt-16">
     <h1 class="text-4xl font-semibold">Side quest not found.</h1>
     <RouterLink class="mt-6 inline-block underline" to="/">back home</RouterLink>
   </section>

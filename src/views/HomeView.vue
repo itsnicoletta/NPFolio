@@ -50,7 +50,7 @@ function updateScroll(event, target) {
 </script>
 
 <template>
-  <div class="home-frame fixed inset-0 overflow-hidden bg-white px-10 pb-5 pt-20 text-black sm:px-16 lg:px-24">
+  <div class="home-frame site-x fixed inset-0 overflow-hidden bg-white pb-5 pt-20 text-black">
     <aside class="home-ascii pointer-events-none absolute bottom-0 top-0 z-0 hidden items-center justify-end overflow-visible md:flex">
       <AsciiGif
         :images="asciiImages"
@@ -69,7 +69,7 @@ function updateScroll(event, target) {
           <span class="font-medium">them too</span>.
         </h1>
 
-        <p class="home-intro mt-8 max-w-2xl text-lg leading-7 sm:text-xl">
+        <p class="home-intro mt-8 max-w-2xl text-lg leading-snug sm:text-xl">
           Multidisciplinary digital designer working across UX/UI, visual identity, web design,
           creative development and digital experiences.
         </p>
@@ -127,7 +127,7 @@ function updateScroll(event, target) {
             </div>
           </div>
 
-          <div v-else-if="activeTab === 'ABOUT'" class="grid gap-10 text-base leading-7 lg:grid-cols-[1.35fr_1fr_0.9fr] xl:gap-14">
+          <div v-else-if="activeTab === 'ABOUT'" class="home-about hide-scrollbar grid gap-10 overflow-y-auto text-base leading-7 lg:grid-cols-[1.35fr_1fr_0.9fr] xl:gap-14">
             <div class="space-y-4">
               <p>
                 I'm Nicoletta Pelosi, a <strong>multidisciplinary digital designer</strong> based in
@@ -146,10 +146,10 @@ function updateScroll(event, target) {
               </p>
             </div>
 
-            <div class="space-y-6 border-2 border-black p-4">
+            <div class="home-about-box space-y-6 border-2 border-black p-4">
               <div>
                 <h2 class="text-sm font-bold uppercase">What I do</h2>
-                <ul class="mt-3 grid grid-cols-2 gap-x-5 gap-y-1 text-sm font-semibold">
+                <ul class="home-about-list mt-3 grid grid-cols-2 gap-x-5 gap-y-1 text-sm font-semibold">
                   <li v-for="item in whatIDo" :key="item">{{ item }}</li>
                 </ul>
               </div>
