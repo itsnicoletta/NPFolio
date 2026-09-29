@@ -134,7 +134,12 @@
   @media (max-width: 820px) {
     .home-content,
     .home-panel {
-      max-width: min(100%, 38rem);
+      max-width: min(100%, 42rem);
+    }
+
+    .home-content {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .home-ascii {
