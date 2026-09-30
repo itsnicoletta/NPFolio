@@ -1,3 +1,10 @@
+function sideQuestFiles(slug, files) {
+  return files.map((file) => ({
+    label: file.replace(/\.pdf$/i, ''),
+    url: `${import.meta.env.BASE_URL}side-quests/${slug}/${encodeURIComponent(file)}`,
+  }))
+}
+
 export const sideQuests = [
   {
     title: 'NPF DeckOS / BiteDJ',
@@ -39,6 +46,11 @@ export const sideQuests = [
     why:
       'It is a small project, but one I have kept returning to for years. It sits somewhere between design practice, volunteering and a personal commitment to using visual communication for something useful.',
     images: [],
+    pdfs: sideQuestFiles('shelter-calendar', [
+      'Calendario da parete 2024 con rifili - Copia.pdf',
+      'calendario gattile 2025 piccolo da tavolo.pdf',
+      'Calendario gattile 2026 da parete compresso.pdf',
+    ]),
   },
   {
     title: 'Music Production',

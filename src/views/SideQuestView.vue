@@ -34,6 +34,23 @@ const sideQuest = computed(() => sideQuests.find((item) => item.slug === route.p
       </div>
     </div>
 
+    <div v-if="sideQuest.pdfs?.length" class="mt-8 border-t-2 border-black pt-6 md:mt-12 md:pt-8">
+      <h2 class="text-sm font-bold uppercase">PDF archive</h2>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <a
+          v-for="pdf in sideQuest.pdfs"
+          :key="pdf.url"
+          class="flex items-center justify-between gap-4 border-2 border-black px-4 py-3 text-sm font-semibold transition-colors hover:bg-black hover:text-white"
+          :href="pdf.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>{{ pdf.label }}</span>
+          <span aria-hidden="true">PDF</span>
+        </a>
+      </div>
+    </div>
+
     <div v-if="sideQuest.images.length" class="mt-8 grid gap-4 sm:grid-cols-2 md:mt-12">
       <button
         v-for="image in sideQuest.images"

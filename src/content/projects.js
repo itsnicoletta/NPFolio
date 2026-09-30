@@ -1,5 +1,13 @@
 const noImages = []
 
+function projectImages(slug, files) {
+  return files.map((file) => `${import.meta.env.BASE_URL}projects/${slug}/${file}`)
+}
+
+function projectVideos(slug, files) {
+  return files.map((file) => `${import.meta.env.BASE_URL}projects/${slug}/${file}`)
+}
+
 function makeProject(project) {
   return {
     client: project.client || project.title,
@@ -7,6 +15,7 @@ function makeProject(project) {
     liveUrl: '',
     links: [],
     images: noImages,
+    videos: [],
     ...project,
   }
 }
@@ -15,6 +24,13 @@ export const projects = [
   makeProject({
     title: 'NoBoard',
     slug: 'noboard',
+    images: projectImages('noboard', [
+      'project15_cover.webp',
+      'project15_1.webp',
+      'project15_2.webp',
+      'project15_3.webp',
+      'project15_4.webp',
+    ]),
     featured: true,
     year: '2026',
     type: 'Product Design / UX/UI / Front-End Development / Desktop App',
@@ -64,6 +80,13 @@ export const projects = [
   makeProject({
     title: 'The Secret Garden',
     slug: 'the-secret-garden',
+    images: projectImages('the-secret-garden', [
+      'project16_cover.webp',
+      'project16_1.webp',
+      'project16_2.webp',
+      'project16_3.webp',
+    ]),
+    videos: projectVideos('the-secret-garden', ['project16_video.webm']),
     featured: true,
     year: '2026',
     type: 'Product Design / UX/UI / Front-End Development / Desktop App',
@@ -111,52 +134,69 @@ export const projects = [
   makeProject({
     title: 'Ramzen',
     slug: 'ramzen',
+    images: projectImages('ramzen', [
+      'project14_cover.webp',
+      'project14_1.webp',
+      'project14_2.webp',
+      'project14_3.webp',
+    ]),
     featured: true,
     year: '2026',
-    type: 'UX/UI / Web Design / Visual Direction / Fashion',
-    role: 'UX/UI / Digital Designer',
-    tools: ['Figma'],
+    type: 'UX/UI / Web Design / Art Direction / Food Concept',
+    role: 'UX/UI Designer / Art Director',
+    tools: ['Figma', 'AI image generation', 'Visual direction'],
     summary:
-      'A fashion-focused digital design project translating an existing luxury identity into an appropriate digital experience.',
+      'A bold restaurant website concept for a ramen brand, designed to make the identity memorable and guide users toward menu exploration, table booking and takeaway ordering.',
     context:
-      'Ramzen is a Milan-based luxury fashion brand combining contemporary fashion with references to nostalgia, craftsmanship and an international luxury audience.',
+      'Published in May 2026 as a concept restaurant website, Ramzen builds a recognisable brand world through an anime-style hero, Asimovian-inspired typography, a black, white and red palette, bold UI and AI-generated food imagery.',
     responsibilities: [
       'UX/UI',
-      'Digital visual direction',
-      'Fashion-oriented layout',
-      'Editorial hierarchy',
-      'Product presentation',
-      'Responsive behaviour',
+      'Creative direction',
+      'Restaurant website concept',
+      'Menu UX',
+      'Conversion flow',
+      'AI food imagery direction',
+      'Booking and takeaway interaction design',
     ],
     approach: [
       {
-        title: 'Supporting the product imagery',
-        text: 'The interface direction emphasises editorial pacing, strong imagery, product hierarchy and restraint.',
+        title: 'Making the brand memorable first',
+        text: 'The page uses strong visual impact to create desire and recognisability before moving users toward useful actions such as reading the menu, booking a table or ordering takeaway.',
       },
       {
-        title: 'Balancing luxury and usability',
-        text: 'The digital interface supports the photography and products without visually competing with them.',
+        title: 'Designing a menu that can be scanned',
+        text: 'Category chips make the menu easy to explore without changing page, while product cards combine image, description, spicy level, price and a “Best appreciated” cue.',
       },
       {
-        title: 'Avoiding generic ecommerce',
-        text: 'The project translates a high-end visual language into a digital interface without reducing it to a standard commerce layout.',
+        title: 'Turning attention into action',
+        text: 'The takeaway flow includes quantity selection, dynamic total, pickup time, name, phone number and confirmation, while the booking flow stays short and clear.',
       },
     ],
     decisions: [
       {
-        title: 'Why restraint?',
-        text: 'For a luxury fashion brand, the interface has to create space for the imagery, materiality and product hierarchy.',
+        title: 'Why such a strong visual direction?',
+        text: 'For a food concept discovered from mobile or social traffic, the first win is being remembered. Ramzen uses a distinctive world to make the brand stick quickly.',
+      },
+      {
+        title: 'Why interactive flows?',
+        text: 'The project is designed as a small restaurant experience, not a static landing page. Users can compare dishes, book and simulate a takeaway order in one clear flow.',
       },
     ],
     outcome:
-      'Digital direction for a fashion interface built around editorial rhythm, restraint and brand consistency.',
+      'A restaurant concept page with strong identity, readable menu structure and clear conversion paths for table booking and takeaway ordering.',
     contribution:
-      'This project demonstrates the ability to work with an existing high-end visual language and translate it into a usable digital interface.',
-    links: [{ label: 'Ramzen website', url: 'https://www.ramzen.com/' }],
+      'This project demonstrates creative direction, memorable brand storytelling, mobile-oriented food UX and conversion-focused interaction design.',
+    links: [],
   }),
   makeProject({
     title: 'Atlas Pro',
     slug: 'atlas-pro',
+    images: projectImages('atlas-pro', [
+      'project13_cover.webp',
+      'project13_1.webp',
+      'project13_2.webp',
+      'project13_3.webp',
+    ]),
     featured: true,
     year: '2026',
     type: 'Digital Marketing / Social Media Strategy / Content Design / Campaigns',
@@ -229,6 +269,15 @@ export const projects = [
   makeProject({
     title: 'The Ring Experience',
     slug: 'the-ring-experience',
+    images: projectImages('the-ring-experience', [
+      'project12_cover.webp',
+      'project12_1.webp',
+      'project12_2.webp',
+      'project12_3.webp',
+      'project12_4.webp',
+      'project12_5.webp',
+    ]),
+    videos: projectVideos('the-ring-experience', ['project12_video.webm']),
     featured: true,
     year: '2026',
     type: 'UX/UI / Web Design / Front-End Development / CMS',
@@ -277,13 +326,16 @@ export const projects = [
     contribution:
       'This project demonstrates the ability to connect UX, visual storytelling, front-end implementation and CMS architecture in a real client project.',
     liveUrl: 'https://www.theringexperience.lk/',
-    links: [
-      { label: 'The Froggy Studio case study', url: 'https://thefroggystudio.com/projects/theringexperience' },
-    ],
   }),
   makeProject({
     title: 'The Froggy Studio',
     slug: 'the-froggy-studio',
+    images: projectImages('the-froggy-studio', [
+      'project11_cover.webp',
+      'project11_1.webp',
+      'project11_2.webp',
+      'project11_3.webp',
+    ]),
     featured: false,
     year: '2026',
     type: 'Art Direction / Web Design / Brand Positioning / Creative Strategy',
@@ -331,6 +383,13 @@ export const projects = [
   makeProject({
     title: 'Lost in Light',
     slug: 'lost-in-light',
+    images: projectImages('lost-in-light', [
+      'project1_cover.webp',
+      'project1_1.webp',
+      'project1_2.webp',
+      'project1_3.webp',
+    ]),
+    videos: projectVideos('lost-in-light', ['project1_video.webm']),
     featured: true,
     year: '2025',
     type: 'Experimental Web / UX/UI / Art Direction / 3D / Creative Development',
@@ -380,6 +439,13 @@ export const projects = [
   makeProject({
     title: 'FocusFlow Pro',
     slug: 'focusflow-pro',
+    images: projectImages('focusflow-pro', [
+      'project3_cover.webp',
+      'project3_1.webp',
+      'project3_2.webp',
+      'project3_3.webp',
+    ]),
+    videos: projectVideos('focusflow-pro', ['project3_video.webm']),
     featured: false,
     year: '2025',
     type: 'Product Design / UX/UI / Front-End Development',
@@ -423,11 +489,18 @@ export const projects = [
       'Live product with project management, time tracking, invoicing, insights, backup and export features.',
     contribution:
       'This project demonstrates product UX, dashboard design, front-end implementation and the organisation of complex functionality.',
-    liveUrl: 'https://www.usefocusflow.pro/',
+    liveUrl: 'https://focusflowpro.netlify.app/',
   }),
   makeProject({
     title: 'Polaroid Landing Page',
     slug: 'polaroid-landing-page',
+    images: projectImages('polaroid-landing-page', [
+      'project2_cover.webp',
+      'project2_1.webp',
+      'project2_2.webp',
+      'project2_3.webp',
+    ]),
+    videos: projectVideos('polaroid-landing-page', ['project2_video.webm']),
     featured: false,
     year: '2025',
     type: 'Web Design / Webflow / Interaction Design',
@@ -473,6 +546,12 @@ export const projects = [
   makeProject({
     title: 'Focum',
     slug: 'focum',
+    images: projectImages('focum', [
+      'project5_cover.webp',
+      'project5_1.webp',
+      'project5_2.webp',
+      'project5_3.webp',
+    ]),
     featured: true,
     year: '2024',
     type: 'Brand Identity / Art Direction / Graphic Design',
@@ -523,6 +602,13 @@ export const projects = [
   makeProject({
     title: 'reMarkable - Seamless Product Configurator',
     slug: 'remarkable-product-configurator',
+    images: projectImages('remarkable-product-configurator', [
+      'project7_cover.webp',
+      'project7_1.webp',
+      'project7_2.webp',
+      'project7_3.webp',
+    ]),
+    videos: projectVideos('remarkable-product-configurator', ['project7_video.webm']),
     featured: false,
     year: '2024',
     type: 'UI Design / Conversion Design / Interaction Design',
@@ -572,6 +658,12 @@ export const projects = [
   makeProject({
     title: 'Jewellery Brand - Promotional Newsletter',
     slug: 'jewellery-brand-promotional-newsletter',
+    images: projectImages('jewellery-brand-promotional-newsletter', [
+      'project9_cover.webp',
+      'project9_1.webp',
+      'project9_2.webp',
+      'project9_3.webp',
+    ]),
     featured: false,
     year: '2024',
     type: 'Email Design / Visual Design / Conversion Design',

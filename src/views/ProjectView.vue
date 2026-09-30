@@ -105,6 +105,23 @@ const project = computed(() => projects.find((item) => item.slug === route.param
       </div>
     </div>
 
+    <div v-if="project.videos?.length" class="mt-8 border-t-2 border-black pt-6 md:mt-12 md:pt-8">
+      <h2 class="text-sm font-bold uppercase">Video</h2>
+      <div class="mt-5 grid gap-4">
+        <video
+          v-for="video in project.videos"
+          :key="video"
+          class="w-full rounded-lg border-2 border-black"
+          :src="video"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        ></video>
+      </div>
+    </div>
+
     <div v-if="project.images.length" class="mt-8 grid gap-4 sm:grid-cols-2 md:mt-12">
       <button
         v-for="image in project.images"
