@@ -66,19 +66,6 @@ export const sideQuests = [
     images: [],
   },
   {
-    title: 'NPF DJ',
-    slug: 'npf-dj',
-    year: 'Ongoing',
-    type: 'DJing / Music Selection / Performance',
-    summary: 'DJ sets & music selection',
-    description:
-      'A personal DJ project focused mainly on progressive house, built around music selection, harmonic mixing and live performance.',
-    items: ['music selection', 'harmonic mixing', 'live performance', 'set building'],
-    why:
-      'It is a more performative side of my creative work, where selection, pacing and atmosphere matter as much as execution.',
-    images: [],
-  },
-  {
     title: 'Creative Coding',
     slug: 'creative-coding',
     year: 'Ongoing',

@@ -9,7 +9,7 @@ import ScrambleTitle from './components/ScrambleTitle.vue'
     @cut.prevent
     @contextmenu.prevent
   >
-    <header class="site-x fixed left-0 right-0 top-0 z-10 flex items-center justify-between bg-white py-5">
+    <header class="site-header site-x fixed left-0 right-0 top-0 z-10 flex items-center justify-between bg-white py-5">
       <RouterLink class="text-2xl font-semibold tracking-tight" to="/">NPFolio</RouterLink>
       <div class="flex items-center gap-4">
         <a
