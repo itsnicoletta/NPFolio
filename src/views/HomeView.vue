@@ -98,7 +98,7 @@ function updateScroll(event, target) {
 
         <div
           class="pt-5"
-          :class="activeTab === 'ABOUT' ? 'w-[calc(100vw-5rem)] max-w-6xl sm:w-[calc(100vw-8rem)] lg:w-[calc(100vw-12rem)]' : ''"
+          :class="activeTab === 'ABOUT' ? 'w-full max-w-6xl' : ''"
         >
           <div v-if="activeTab === 'PROJECTS'">
             <div class="flex gap-5">
